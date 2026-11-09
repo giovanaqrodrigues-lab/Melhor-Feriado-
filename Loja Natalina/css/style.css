@@ -27,6 +27,11 @@ body {
     margin: 0;
 }
 
+img{
+    align-items: center;
+    width: 80px;
+}
+
 .Logo{    
  position: relative;
     min-height: 90px;
