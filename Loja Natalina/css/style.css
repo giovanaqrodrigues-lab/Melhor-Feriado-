@@ -5,6 +5,8 @@
     --vermelho-escuro: #95252f;
     --azul-escuro: #10283d;
     --branco-azulado: #ecf7ff;
+    --amarelo: #F5D547;
+    --cinza-claro: #cdced3;
 }
 
 html,
@@ -29,77 +31,115 @@ body {
 
 img{
     align-items: center;
-    width: 80px;
+    width: 200px;
 }
 
-.slideshow-container {
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    overflow: hidden;
-    background-color: #10283d;
+.titulo-principal {
+    color: var(--vermelho-vibrante);
+    font-family: 'Playfair Display SC', serif;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    margin-left: 20px;
 }
 
-.slideshow-track {
-    display: flex;
-    width: 100%;
+.titulo-caixa {
+    border: 2px solid var(--cinza-claro);
 }
 
-.slideshow-container .slide {
-    min-width: 100vw;
-    box-sizing: border-box;
-}
-
-.slideshow-container img {
-    width: 100vw;
-    height: auto;
-    max-height: 480px;
-    object-fit: cover;
-    display: block;
-}
-
-/* Botões sobrepostos */
-.btn-slide {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(179, 32, 42, 0.8);
-    color: white;
-    border: 2px solid #ecf7ff;
-    padding: 14px 20px;
-    cursor: pointer;
-    font-size: 24px;
-    border-radius: 50%;
-    z-index: 10;
-    transition: background-color 0.3s;
-}
-
-.btn-slide:hover {
-    background-color: #b3202a;
-}
-
-.btn-slide.prev { left: 20px; }
-.btn-slide.next { right: 20px; }
-
-.Logo{    
- position: relative;
-    min-height: 90px;
+/* HEADER / LOGO / NAVBAR */
+.header,
+.Logo {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
 }
 
+.header .Logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap;
+    position: static;
+}
+
+.header img,
+.Logo img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.header h1,
 .Logo h1 {
+    color: var(--verde-claro);
+    font-family: 'Playfair Display SC', serif;
+    font-size: 30px;
     margin: 0;
 }
 
-.Logo img {
+.header > .Logo h1 {
+    text-align: left;
+    flex: 0 0 auto;
+}
+
+.Logo-botao {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.header nav,
+.Logo nav {
+    left: 50%;
     position: absolute;
-    left: 0;
-    width: 150px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 700px){
+    .header,
+    .Logo {
+        flex-direction: column;
+    }
+
+    .header nav,
+    .Logo nav {
+        position: static;
+        transform: none;
+    }
+}
+
+a{
+    color: var(--verde-claro);
+    text-decoration: none;
+    text-align: center;
+}
+
+header {
+    background-color: #1f5d3a;
+    color: var(--verde-claro);
+    padding: 20px;
+    text-align: center;
+    padding: 25px;
+}
+
+header p{
+    color: var(--vermelho-escuro);
 }
 
 h1 {
@@ -121,24 +161,6 @@ p{
     font-family: 'Lato', serif;
 }
 
-header {
-    background-color: #1f5d3a;
-    color: var(--verde-claro);
-    padding: 20px;
-    text-align: center;
-    padding: 25px;
-}
-
-header p{
-    color: var(--vermelho-escuro)
-}
-
-a{
-    color: var(--verde-claro);
-    text-decoration: none;
-    text-align: center;
-    paidding: 20px;
-}
 
 footer{
     background-color: var(--verde-escuro);
@@ -154,7 +176,8 @@ footer p {
 section {
     text-align: center;
 }
-
+ 
+/* BOTAO DE OFERTAS */
 .ofertas {
     background: linear-gradient(to right, var(--verde-escuro), var(--verde-claro), var(--verde-escuro));
     color: var(--branco-azulado);
@@ -172,13 +195,79 @@ section {
 
 }
 
+/* CARDS DE OFERTAS */
 
-button{
-    alin-items: center;
+.produto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 240px));
+    gap: 8px;
+    align-items: stretch;
     justify-content: center;
 }
 
+.card {
+    box-sizing: border-box;
+    background-color: var(--verde-claro);
+    color: var(--branco-azulado);
+    border-radius: 10px;
+    border: 2px solid var(--cinza-claro);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
 
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.preco-promocional {
+    color: var(--branco-azulado);
+    font-weight: bold;
+    font-size: 18px;
+    background-color: var(--vermelho-vibrante);
+    padding: 5px;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.botao-ofertas {
+    background-color: var(--verde-escuro);
+    color: var(--branco-azulado);
+    border: 2px solid var(--verde-claro);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 14px;
+    display: block;
+    width: fit-content;
+    margin: 10px auto 0;
+    transition: transform 0.3s ease;
+}
+
+.botao-ofertas:hover {
+    transform: scale(1.1);
+}
+
+button{
+    align-items: center;
+    justify-content: center;
+}
+
+/* SOBRE / NOSSOS VALORES */
 ul {
     display: table;
     margin: 0 auto;
@@ -190,6 +279,8 @@ li {
     text-align: left;
     list-style-position: outside;
 }
+
+/* CONTATO / FORMULÁRIO */
 
 .formulario {
     align-items: center;
@@ -206,6 +297,8 @@ label {
     color: var(--branco-azulado);
 }
 
+/* CONTATO / BOTÕES DE REDES SOCIAIS */
+
 .instagram {
      background: linear-gradient(to right, #8303f7, #f401ba, #f64409, #f6c901);
     color: var(--branco-azulado);
@@ -214,7 +307,13 @@ label {
     border-radius: 10px;
     padding: 3px 6px;
     font-size: 9px;
+    transition: transform 0.3s ease;
 }
+
+.instagram:hover {
+    transform: translateY(-3px);
+}
+
 #instagram {
 
     color: var(--branco-azulado);
@@ -229,8 +328,15 @@ label {
     border-radius: 10px;
     padding: 3px 6px;
     font-size: 9px;
+    transition: transform 0.3s ease;
 }
+
+.facebook:hover {
+    transform: translateY(-3px);
+}
+
 #facebook {
     color: var(--branco-azulado);
     font-size: 20px;
 }
+
