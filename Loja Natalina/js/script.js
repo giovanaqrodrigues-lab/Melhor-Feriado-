@@ -79,14 +79,18 @@ if (track && slidesOriginais.length > 0) {
     reiniciarTemporizador();
 }
 
+// ----------------------------------------------------
+// CRONÔMETRO REAL PARA O NATAL (SEM ÁUDIO)
+// ----------------------------------------------------
+
 document.addEventListener("DOMContentLoaded", () => {
     const spanDias = document.getElementById("dias");
     const spanHoras = document.getElementById("horas");
     const spanMinutos = document.getElementById("minutos");
-    const cardContador = document.getElementById("card-contador");
-    const audioNatal = document.getElementById("audio-natal");
 
     function atualizarRelogioNatal() {
+        if (!spanDias || !spanHoras || !spanMinutos) return;
+
         const agora = new Date();
         const anoAtual = agora.getFullYear();
         let natal = new Date(anoAtual, 11, 25, 0, 0, 0); // 25 de Dezembro
@@ -111,4 +115,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Atualiza a cada 1 segundo
     setInterval(atualizarRelogioNatal, 1000);
     atualizarRelogioNatal();
-
+});
