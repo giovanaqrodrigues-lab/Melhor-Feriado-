@@ -18,16 +18,14 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: #ecf7ff;
+    margin: 0;
 }
 
 main {
     flex: 1;
 }
 
-body {
-    background-color: #ecf7ff;
-    margin: 0;
-}
 
 img{
     align-items: center;
