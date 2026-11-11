@@ -196,6 +196,79 @@ header p{
     color: var(--vermelho-escuro);
 }
 
+.contador-wrapper {
+    position: fixed;
+    bottom: 20px;   /* Fica a 20 pixels da parte de baixo da tela */
+    left: 20px;     /* Fica grudado no canto esquerdo */
+    z-index: 1000;  /* Garante que ele fique por cima de tudo (dos cards, fotos, etc) */
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.contador-container {
+    position: relative;
+    background-color: #121212;
+    border: 3px solid var(--vermelho-vibrante, #b3202a);
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 0 20px rgba(179, 32, 42, 0.5);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contador-container:hover {
+    transform: scale(1.03);
+}
+
+.bloco-tempo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.digitos {
+    background-color: var(--vermelho-vibrante, #b3202a);
+    color: #ffffff;
+    font-size: 28px; /* Ajustado levemente para caber bem no canto */
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    min-width: 55px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.separador {
+    color: var(--vermelho-vibrante, #b3202a);
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+.rotulo {
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 6px;
+    letter-spacing: 1px;
+}
+
+.gorro-natal {
+    position: absolute;
+    top: -20px;
+    right: -8px;
+    font-size: 30px;
+    transform: rotate(15deg);
+}
+
+
+
 h1 {
     color: #b3202a;
     text-align: center;
