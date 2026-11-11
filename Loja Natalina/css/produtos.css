@@ -1,6 +1,4 @@
-/* ====================================================
-   VARIÁVEIS DE CORES OFICIAIS DO PROJETO
-   ==================================================== */
+
 :root {
     --verde-escuro: #1f5d3a;
     --verde-claro: #88d168;
@@ -10,9 +8,6 @@
     --branco-azulado: #ecf7ff;
 }
 
-/* ====================================================
-   ESTILO GERAL E RESET
-   ==================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -26,9 +21,6 @@ body {
     padding: 30px 20px;
 }
 
-/* ====================================================
-   GRADE DE PRODUTOS (Lado a lado, divididos em cards)
-   ==================================================== */
 #container-produtos {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
@@ -117,8 +109,4 @@ body {
     width: 100%;
     text-align: center;
     transition: background-color 0.2s ease;
-}
-
-.btn-comprar:hover {
-    background-color: var(--vermelho-escuro); /* Fica com o vermelho escuro ao passar o mouse */
 }
