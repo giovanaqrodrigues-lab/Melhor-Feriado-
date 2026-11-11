@@ -1,0 +1,117 @@
+
+:root {
+    --verde-escuro: #1f5d3a;
+    --verde-claro: #88d168;
+    --vermelho-vibrante: #b3202a;
+    --vermelho-escuro: #95252f;
+    --azul-escuro: #10283d;
+    --branco-azulado: #ecf7ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--verde-escuro); /* Fundo verde natalino */
+    color: var(--azul-escuro);
+    padding: 30px 20px;
+}
+
+*/
+#container-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* O Card Individual do Produto */
+.card-produto {
+    background-color: var(--branco-azulado); /* Fundo levemente azulado de neve */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--verde-claro); /* Detalhe em verde claro */
+    box-shadow: 0 4px 15px rgba(16, 40, 61, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Sem transições ou efeitos de hover/subida */
+}
+
+/* Área da Imagem */
+.card-imagem {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #d0e4f2;
+}
+
+.card-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Etiqueta de Categoria */
+.badge-categoria {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--azul-escuro); 
+    color: var(--verde-claro); 
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+/* Conteúdo de Texto do Card */
+.card-conteudo {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.titulo-produto {
+    font-size: 15px;
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.preco-produto {
+    font-size: 19px;
+    color: var(--vermelho-vibrante); /* Preço em vermelho vibrante */
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+/* Botão Comprar */
+.btn-comprar {
+    background-color: var(--vermelho-vibrante);
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-comprar:hover {
+    background-color: var(--vermelho-escuro); /* Fica com o vermelho escuro ao passar o mouse */
+}
