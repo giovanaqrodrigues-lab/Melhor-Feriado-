@@ -1,87 +1,88 @@
+document.addEventListener("DOMContentLoaded", () => {
+    function criarNeve() {
+        const floco = document.createElement("div");
+        floco.classList.add("floco-neve");
 
-const track = document.getElementById("slideshow-track");
-const slidesOriginais = document.querySelectorAll(".slideshow-container .slide");
-const btnPrev = document.getElementById("btn-prev");
-const btnNext = document.getElementById("btn-next");
+        // Símbolos variados para dar naturalidade
+        const simbolos = ["❄", "❅", "❆", "•"];
+        floco.textContent = simbolos[Math.floor(Math.random() * simbolos.length)];
 
-if (track && slidesOriginais.length > 0) {
-    // Clona o primeiro e o último slide para fazer o loop perfeito sem dar solavanco
-    const primeiroClone = slidesOriginais[0].cloneNode(true);
-    const ultimoClone = slidesOriginais[slidesOriginais.length - 1].cloneNode(true);
+        // Posição horizontal aleatória na tela (de 0% a 100%)
+        floco.style.left = Math.random() * 100 + "vw";
 
-    track.appendChild(primeiroClone);
-    track.insertBefore(ultimoClone, slidesOriginais[0]);
+        // Tamanhos variados para os flocos (de 12px a 24px)
+        const tamanho = Math.random() * 12 + 12;
+        floco.style.fontSize = tamanho + "px";
 
-    const todosSlides = document.querySelectorAll(".slideshow-container .slide");
-    let indice = 1; // Começa no primeiro slide real (após o clone do último)
-    let tempoTroca = 3000; // 3 segundos fixos
-    let temporizador = null;
+        // Velocidade de queda variada (de 3 a 7 segundos)
+        const duracao = Math.random() * 4 + 3;
+        floco.style.animationDuration = duracao + "s";
 
-    // Posiciona no slide inicial sem animação
-    track.style.transform = `translateX(-${indice * 100}%)`;
+        document.body.appendChild(floco);
 
-    function atualizarPosicao(comAnimacao = true) {
-        if (comAnimacao) {
-            track.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
-        } else {
-            track.style.transition = "none";
-        }
-        track.style.transform = `translateX(-${indice * 100}%)`;
+        // Remove o elemento do HTML após o término da animação para manter o site leve
+        setTimeout(() => {
+            floco.remove();
+        }, duracao * 1000);
     }
 
-    function proximo() {
-        if (indice >= todosSlides.length - 1) return;
-        indice++;
-        atualizarPosicao(true);
-    }
+    // Cria um novo floco de neve a cada 300 milissegundos
+    setInterval(criarNeve, 300);
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const track = document.getElementById("slideshow-track");
+    const slides = document.querySelectorAll(".slide");
+    const btnPrev = document.getElementById("btn-prev");
+    const btnNext = document.getElementById("btn-next");
+    const container = document.querySelector(".slideshow-container");
 
-    function anterior() {
-        if (indice <= 0) return;
-        indice--;
-        atualizarPosicao(true);
-    }
+    let indexAtual = 0;
+    const totalSlides = slides.length;
 
-    // Trata o looping contínuo quando a transição termina
-    track.addEventListener("transitionend", () => {
-        if (todosSlides[indice] === primeiroClone) {
-            track.style.transition = "none";
-            indice = 1;
-            track.style.transform = `translateX(-${indice * 100}%)`;
+    // --- 1. NAVEGAÇÃO HORIZONTAL POR BOTÕES ---
+    function atualizarSlide() {
+        if (track) {
+            track.style.transform = `translateX(-${indexAtual * 100}%)`;
         }
-        if (todosSlides[indice] === ultimoClone) {
-            track.style.transition = "none";
-            indice = todosSlides.length - 2;
-            track.style.transform = `translateX(-${indice * 100}%)`;
-        }
-    });
-
-    // Reinicia o contador de 3 segundos sempre que houver ação
-    function reiniciarTemporizador() {
-        clearInterval(temporizador);
-        temporizador = setInterval(proximo, tempoTroca);
     }
 
     if (btnNext) {
         btnNext.addEventListener("click", () => {
-            proximo();
-            reiniciarTemporizador(); // Espera 3 segundos completos após o clique
+            indexAtual = (indexAtual + 1) % totalSlides;
+            atualizarSlide();
         });
     }
 
     if (btnPrev) {
         btnPrev.addEventListener("click", () => {
-            anterior();
-            reiniciarTemporizador(); // Espera 3 segundos completos após o clique
+            indexAtual = (indexAtual - 1 + totalSlides) % totalSlides;
+            atualizarSlide();
         });
     }
 
-    // Inicia a troca automática a cada 3 segundos
-    reiniciarTemporizador();
-}
+    // --- 2. EFEITO PARALLAX VERTICAL NAS IMAGENS AO ROLAR ---
+    const imagensSlide = document.querySelectorAll(".slide img");
 
-// ----------------------------------------------------
-// CRONÔMETRO REAL PARA O NATAL (SEM ÁUDIO)
-// ----------------------------------------------------
+    window.addEventListener("scroll", () => {
+        if (!container) return;
+
+        const posicaoContainer = container.getBoundingClientRect();
+        const alturaJanela = window.innerHeight;
+
+        // Se o slideshow estiver visível na tela, calcula o movimento
+        if (posicaoContainer.top < alturaJanela && posicaoContainer.bottom > 0) {
+            // Fator 0.15 controla a velocidade do parallax (menor = mais lento)
+            const deslocamento = (posicaoContainer.top - alturaJanela / 2) * 0.15;
+
+            imagensSlide.forEach(img => {
+                // Move a imagem verticalmente
+                img.style.transform = `translateY(${deslocamento}px)`;
+            });
+        }
+    });
+});
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const spanDias = document.getElementById("dias");

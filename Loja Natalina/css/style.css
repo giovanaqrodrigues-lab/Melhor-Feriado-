@@ -26,11 +26,14 @@ main {
     flex: 1;
 }
 
+/* ====================================================
+   ESTILO DO SLIDESHOW COM PARALLAX NAS IMAGENS
+   ==================================================== */
 .slideshow-container {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: 400px;
+    height: 400px; /* Altura visível do slideshow */
     margin: 30px auto;
     overflow: hidden;
     border-radius: 12px;
@@ -54,23 +57,23 @@ main {
 
 .slide img {
     width: 100%;
-    height: 120%; /* Altura maior para permitir o movimento vertical do Parallax sem cortar */
+    height: 120%; /* Imagem mais alta para o parallax */
     object-fit: cover;
     position: absolute;
-    top: -10%;
+    top: -10%; /* Posição inicial para o deslocamento */
     left: 0;
     will-change: transform;
-    transition: transform 0.1s linear;
+    transition: transform 0.1s linear; /* Suaviza o movimento do parallax */
 }
 
-/* Botões de navegação */
+/* Botões */
 .btn-slide {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(16, 40, 61, 0.6);
     color: #ffffff;
-    border: 2px solid var(--verde-claro, #88d168);
+    border: 2px solid #88d168; /* var(--verde-claro) */
     font-size: 24px;
     padding: 10px 15px;
     cursor: pointer;
@@ -80,13 +83,35 @@ main {
 }
 
 .btn-slide:hover {
-    background-color: var(--vermelho-vibrante, #b3202a);
+    background-color: #b3202a; /* var(--vermelho-vibrante) */
     transform: translateY(-50%) scale(1.1);
 }
 
 .btn-slide.prev { left: 15px; }
 .btn-slide.next { right: 15px; }
 
+
+.floco-neve {
+    position: fixed;
+    top: -20px;
+    color: #ffffff;
+    user-select: none;
+    pointer-events: none; /* Garante que os flocos não atrapalhem os cliques nos produtos/botões */
+    z-index: 9999; /* Fica por cima de todos os elementos da página */
+    animation: cair linear forwards;
+    opacity: 0.9;
+}
+
+@keyframes cair {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}
 
 .contador-wrapper {
     position: fixed;
@@ -95,7 +120,7 @@ main {
     z-index: 1000;
     display: flex;
     justify-content: center;
-    
+
 }
 
 .contador-container {
