@@ -78,3 +78,37 @@ if (track && slidesOriginais.length > 0) {
     // Inicia a troca automática a cada 3 segundos
     reiniciarTemporizador();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const spanDias = document.getElementById("dias");
+    const spanHoras = document.getElementById("horas");
+    const spanMinutos = document.getElementById("minutos");
+    const cardContador = document.getElementById("card-contador");
+    const audioNatal = document.getElementById("audio-natal");
+
+    function atualizarRelogioNatal() {
+        const agora = new Date();
+        const anoAtual = agora.getFullYear();
+        let natal = new Date(anoAtual, 11, 25, 0, 0, 0); // 25 de Dezembro
+
+        // Se o Natal já passou este ano, calcula para o próximo ano
+        if (agora > natal) {
+            natal = new Date(anoAtual + 1, 11, 25, 0, 0, 0);
+        }
+
+        const diferenca = natal - agora;
+
+        const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+
+        // Formata para ter sempre 2 dígitos (ex: "02" em vez de "2")
+        spanDias.textContent = String(dias).padStart(2, '0');
+        spanHoras.textContent = String(horas).padStart(2, '0');
+        spanMinutos.textContent = String(minutos).padStart(2, '0');
+    }
+
+    // Atualiza a cada 1 segundo
+    setInterval(atualizarRelogioNatal, 1000);
+    atualizarRelogioNatal();
+
