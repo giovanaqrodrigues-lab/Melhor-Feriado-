@@ -29,13 +29,54 @@
          </div>
     </header>
 
-    <div class="slideshow">
-        <img src="../img/desconto.jpeg" alt="Desconto"/> 
-        <img src="../img/produto.jpeg" alt="Produtos"/> 
-        <img src="../img/sobre.jpeg" alt="Sobre"/> 
+    <div class="slideshow-container">
+    <div class="slideshow-track" id="slideshow-track">
+        <div class="slide">
+            <img src="../img/sobre.png" alt="Sobre a Loja">
         </div>
-        
+        <div class="slide">
+            <img src="../img/oferta.png" alt="Descontos Especiais">
+        </div>
+        <div class="slide">
+            <img src="../img/produto.png" alt="Fragrâncias de Natal">
+        </div>
     </div>
+
+    <!-- Botões -->
+    <button class="btn-slide prev" id="btn-prev">&#10094;</button>
+    <button class="btn-slide next" id="btn-next">&#10095;</button>
+</div>
+
+    <!-- CONTADOR REGRESSIVO ESTILO PAINEL DE NATAL -->
+<div class="contador-wrapper">
+    <div class="contador-container" id="card-contador" title="Clique para tocar a música de Natal!">
+        
+        <!-- Bloco de Dias -->
+        <div class="bloco-tempo">
+            <div class="digitos" id="dias">00</div>
+            <span class="rotulo">DIAS</span>
+        </div>
+
+        <span class="separador">:</span>
+
+        <!-- Bloco de Horas -->
+        <div class="bloco-tempo">
+            <div class="digitos" id="horas">00</div>
+            <span class="rotulo">HRS</span>
+        </div>
+
+        <span class="separador">:</span>
+
+        <!-- Bloco de Minutos -->
+        <div class="bloco-tempo">
+            <div class="digitos" id="minutos">00</div>
+            <span class="rotulo">MINS</span>
+        </div>
+
+        <!-- Gorro de Natal Decorativo no canto -->
+        <div class="gorro-natal">🎅</div>
+    </div>
+</div>
 
     <main>
         <section>
