@@ -117,3 +117,18 @@ document.addEventListener("DOMContentLoaded", () => {
     setInterval(atualizarRelogioNatal, 1000);
     atualizarRelogioNatal();
 });
+
+const botaoMusica = document.getElementById('btn-musica');
+const audioNatalino = document.getElementById('audio-natalino');
+
+if (botaoMusica && audioNatalino) {
+    botaoMusica.addEventListener('click', () => {
+        if (audioNatalino.paused) {
+            audioNatalino.play();
+            botaoMusica.textContent = '⏸️ Pausar Música';
+        } else {
+            audioNatalino.pause();
+            botaoMusica.textContent = '🎵 Tocar Música';
+        }
+    });
+}
