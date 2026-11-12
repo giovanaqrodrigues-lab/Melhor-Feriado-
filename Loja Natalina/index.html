@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melhor Feriado - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsivo.css">
+    <link rel="icon" href="">
+</head>
+<body>
+    <header>
+        <div class="header">
+        <div class="Logo">
+        <a href="index.html" class="Logo-botao" id="Logo">
+            <img src="img/Logo.png" alt="Logo da Loja">
+            <h1>O Melhor Feriado</h1>
+        </a>
+        </div>
+       
+           <nav>
+            <a href="index.html">Home</a>
+            /
+            <a href="produtos.html">Produtos</a>
+            
+            /
+            <a href="ofertas.html">Ofertas</a>
+            /
+            <a href="contato.html">Contato</a>
+            /
+            <a href="sobre.html">Sobre Nós</a>
+            
+        </nav>
+         </div>
+    </header>
+
+    <button id="btn-musica" class="btn-audio">🎵 Tocar Música</button>
+<audio id="audio-natalino" src="audio/Msica_de_natal_Instrumental_MsicaDeNatalTV.mp3" preload="auto" loop></audio>
+
+        <div class="slideshow-container">
+    <div class="slideshow-track" id="slideshow-track">
+        <div class="slide">
+            <img src="img/sobre.jpeg" alt="Sobre a Loja">
+        </div>
+        <div class="slide">
+            <img src="img/produto.jpeg" alt="Fragrâncias de Natal">
+        </div>
+        <div class="slide">
+            <img src="img/desconto.jpeg" alt="Descontos Especiais">
+        </div>
+    </div>
+
+    <!-- Botões de Navegação -->
+    <button class="btn-slide prev" id="btn-prev">&#10094;</button>
+    <button class="btn-slide next" id="btn-next">&#10095;</button>
+</div>
+
+<!-- CONTADOR REGRESSIVO FIXO NO CANTO ESQUERDO (SEM MÚSICA) -->
+<div class="contador-wrapper">
+    <div class="contador-container" id="card-contador">
+        
+        <!-- Bloco de Dias -->
+        <div class="bloco-tempo">
+            <div class="digitos" id="dias">00</div>
+            <span class="rotulo">DIAS</span>
+        </div>
+
+        <span class="separador">:</span>
+
+        <!-- Bloco de Horas -->
+        <div class="bloco-tempo">
+            <div class="digitos" id="horas">00</div>
+            <span class="rotulo">HRS</span>
+        </div>
+
+        <span class="separador">:</span>
+
+        <!-- Bloco de Minutos -->
+        <div class="bloco-tempo">
+            <div class="digitos" id="minutos">00</div>
+            <span class="rotulo">MINS</span>
+        </div>
+
+        <!-- Gorro de Natal Decorativo -->
+        <div class="gorro-natal">🎅</div>
+    </div>
+</div>
+    <main>
+        <section>
+
+            <h2>Um Natal cheio de encanto!</h2>
+            <p>
+                Encontre tudo para deixar seu Natal ainda mais especial.
+                Aqui você encontra presentes, decoração e novidades
+                para celebrar essa época mágica do ano.
+            </p>
+<button type="button" class="ofertas" >
+                <a href="ofertas.html" id="ofertas">Ver ofertas especiais</a>
+            </button>
+        </section>
+
+        <section>
+            <h2>O Natal começa aqui</h2>
+            <p>
+                Prepare sua casa, surpreenda quem você ama e crie
+                momentos inesquecíveis com a Encanto de Natal.
+            </p>
+<section class="imagem-comeco">
+           <img src="img/decoração ( index ).jpg" alt="Decoração Natalina">
+           <img src="img/jantar ( index ).jpg" alt="Mesa de jantar natalina">
+           <img src="img/presentes ( index ).jpg" alt="Presentes de Natal">
+ </section>
+        </section>
+
+        <section>
+            <h2>Encontre o encanto do seu Natal</h2>
+            <p>
+                Cada detalhe faz a diferença. Explore nossas ofertas
+                e encontre inspirações para comemorar essa data especial.
+            </p>
+            <br>
+            <button type="button" class="ofertas" >
+                <a href="ofertas.html" id="ofertas">Ver ofertas especiais</a>
+            </button>
+            
+        </section>
+    </main>
+<br>
+    <footer>
+        <p>&copy; 2026 Melhor Feriado. Todos os direitos reservados.</p>
+        <p>Feito com carinho para celebrar o Natal.</p>
+    </footer>
+ <script src="js/script.js"></script>
+</body>
+</html>
