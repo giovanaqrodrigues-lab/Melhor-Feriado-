@@ -1,0 +1,188 @@
+
+@media (max-width: 360px) {
+    p{
+        margin: 25px;
+    }
+}
+
+/* HEADER / LOGO / NAVBAR */
+
+
+
+@media (max-width: 1200px){
+    .header,
+    .Logo {
+        flex-direction: column;
+    }
+
+    .header nav,
+    .Logo nav {
+        position: static;
+        transform: none;
+    }
+}
+
+
+@media (max-width: 360px) {
+    header {
+        padding: 12px 8px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .header,
+    .header .Logo,
+    .Logo-botao {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .Logo-botao {
+        gap: 8px;
+    }
+
+    .header img {
+        width: 56px;
+        height: 56px;
+        flex: 0 0 56px;
+    }
+
+    .header h1 {
+        min-width: 0;
+        flex: 1 1 auto;
+        font-size: 20px;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* IMAGENS NO INDEX */
+
+
+@media (max-width: 360px) {
+    .imagem-comeco {
+        display: flex;
+        gap: 6px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .imagem-comeco img {
+        width: calc((100% - 12px) / 3);
+        height: auto;
+        margin: 0;
+        object-fit: contain;
+        box-sizing: border-box;
+    }
+}
+
+
+/* SLIDESHOW */
+
+@media (max-width: 360px) {
+    .slideshow-container {
+        width: 95%;
+        height: 200px;
+        margin: 15px auto;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 120%;
+        object-fit: cover;
+    }
+}
+
+/* BOTÃO SLIDE */
+@media (max-width: 360px) {
+    .btn-slide {
+        font-size: 16px;
+        padding: 6px 9px;
+        border-width: 1px;
+    }
+}
+
+/* CONTADOR */
+@media (max-width: 360px) {
+    .contador-wrapper {
+        left: 8px;
+        bottom: 8px;
+    }
+
+    .contador-container {
+        gap: 5px;
+        padding: 8px 10px;
+        border-width: 2px;
+    }
+
+    .digitos {
+        min-width: 38px;
+        padding: 4px 5px;
+        font-size: 18px;
+        letter-spacing: 0;
+    }
+
+    .separador {
+        margin-bottom: 12px;
+        font-size: 18px;
+    }
+
+    .rotulo {
+        margin-top: 4px;
+        font-size: 7px;
+        letter-spacing: 0;
+    }
+
+    .gorro-natal {
+        top: -14px;
+        right: -6px;
+        font-size: 22px;
+    }
+}
+
+/* OFERTS CARDS */
+
+@media (max-width: 768px) {
+    .produto-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        padding: 0 8px;
+    }
+
+    .produto-container .card {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 8px;
+    }
+
+    .produto-container .card p {
+        margin: 8px 0;
+    }
+
+    .produto-container .preco-promocional {
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 14px;
+}
+}
+
+/* FORMULARIO / CONTATO */
+
+@media (max-width: 768px) {
+    .formulario {
+        margin: 20px 10px;
+        padding: 12px;
+        box-sizing: border-box;
+    }
+
+    .formulario input,
+    .formulario textarea {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
+

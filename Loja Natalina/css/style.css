@@ -26,6 +26,7 @@ main {
     flex: 1;
 }
 
+/* SLIDESHOW */
 
 .slideshow-container {
     position: relative;
@@ -64,14 +65,14 @@ main {
     transition: transform 0.1s linear; /* Suaviza o movimento do parallax */
 }
 
-/* Botões */
+/* Botões SLIDESHOW */
 .btn-slide {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(16, 40, 61, 0.6);
-    color: #ffffff;
-    border: 2px solid #88d168; /* var(--verde-claro) */
+    background-color: var(--azul-escuro);
+    color: var(--branco-azulado);
+    border: 2px solid var(--verde-claro);
     font-size: 24px;
     padding: 10px 15px;
     cursor: pointer;
@@ -81,7 +82,7 @@ main {
 }
 
 .btn-slide:hover {
-    background-color: #b3202a; /* var(--vermelho-vibrante) */
+    background-color: var(--vermelho-vibrante);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -111,6 +112,7 @@ main {
     }
 }
 
+/* CONTADOR REGRESSIVO */
 .contador-wrapper {
     position: fixed;
     bottom: 20px;
@@ -175,6 +177,8 @@ main {
     font-size: 30px;
     transform: rotate(15deg);
 }
+
+/* TITULO PRINCIPAL E IMAGENS */
 img{
     align-items: center;
     width: 200px;
@@ -257,18 +261,7 @@ nav{
     transform: translate(-50%, -50%);
 }
 
-@media (max-width: 700px){
-    .header,
-    .Logo {
-        flex-direction: column;
-    }
 
-    .header nav,
-    .Logo nav {
-        position: static;
-        transform: none;
-    }
-}
 
 a{
     color: var(--verde-claro);
@@ -281,7 +274,9 @@ header {
     color: var(--verde-claro);
     padding: 20px;
     text-align: center;
-    padding: 25px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 16px 12px;
 }
 
 header p{
@@ -465,9 +460,6 @@ section {
     object-fit: cover;
     border-radius: 10px 10px 0 0;
 }
-
-
-
 
 
 /* CARDS DE OFERTAS */
