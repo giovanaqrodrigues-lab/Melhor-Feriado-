@@ -1,3 +1,18 @@
+const botaoMusica = document.getElementById('btn-musica');
+const audioNatalino = document.getElementById('audio-natalino');
+
+if (botaoMusica && audioNatalino) {
+    botaoMusica.addEventListener('click', () => {
+        if (audioNatalino.paused) {
+            audioNatalino.play();
+            botaoMusica.textContent = '⏸️ Pausar Música';
+        } else {
+            audioNatalino.pause();
+            botaoMusica.textContent = '🎵 Tocar Música';
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     function criarNeve() {
         const floco = document.createElement("div");
