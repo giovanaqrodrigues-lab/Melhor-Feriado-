@@ -1,7 +1,3 @@
-// ----------------------------------------------------
-// SCRIPT DE INTERAÇÃO DOS CARDS E BOTÕES COM JAVASCRIPT
-// ----------------------------------------------------
-alert ("esra funcionando")
 document.addEventListener("DOMContentLoaded", () => {
     // Seleciona todos os cards e todos os botões de comprar criados no HTML
     const cards = document.querySelectorAll(".card-produto");
