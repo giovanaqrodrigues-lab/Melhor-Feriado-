@@ -234,7 +234,7 @@ img{
     margin: 0;
 }
 
-.header > .Logo h1 {
+.header .Logo h1 {
     text-align: left;
     flex: 0 0 auto;
 }
