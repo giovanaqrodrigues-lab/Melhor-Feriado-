@@ -219,6 +219,17 @@ img{
     position: static;
 }
 
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.header .Logo {
+    grid-column: 1;
+    justify-self: start;
+}
+
 .header img,
 .Logo img {
     width: 80px;
@@ -255,10 +266,13 @@ nav{
 
 .header nav,
 .Logo nav {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: static;
+    transform: none;
+}
+
+.header nav {
+    grid-column: 2;
+    justify-self: center;
 }
 
 
